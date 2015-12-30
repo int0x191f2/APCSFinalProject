@@ -10,12 +10,11 @@ import javafx.beans.value.*;
 import javafx.concurrent.*;
 public class Browser{
 	public static void main(String[] args){
+		History history=new History();
 		JFrame jFrame=new JFrame("Browser");
-
 		JFXPanel jfxPanel=new JFXPanel();
 
 		jFrame.add(jfxPanel);
-
 		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 		Platform.runLater(() -> {
@@ -25,9 +24,10 @@ public class Browser{
 			webView.getEngine().getLoadWorker().stateProperty().addListener(new ChangeListener<State>() {
 				@Override
 				public void changed(ObservableValue ov, State oldState, State newState) {
-
 					if (newState == Worker.State.SUCCEEDED) {
 						System.out.println(webView.getEngine().getLocation());
+						history.addItem(webView.getEngine().getLocation());
+						System.out.println(history.getItems());
 					}
 
 				}
@@ -36,4 +36,5 @@ public class Browser{
 
 		jFrame.setVisible(true);
 	}
+
 }
