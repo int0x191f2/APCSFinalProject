@@ -13,8 +13,13 @@ public class Browser{
 		History history=new History();
 		JFrame jFrame=new JFrame("Browser");
 		JFXPanel jfxPanel=new JFXPanel();
+		JButton butt=new JButton("History");
+		butt.setBounds(0,0,120,25);
+		jfxPanel.setBounds(0,25,1000,800);
 
 		jFrame.add(jfxPanel);
+		jFrame.add(butt);
+		jFrame.setLayout(null);
 		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 		Platform.runLater(() -> {
