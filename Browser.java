@@ -17,6 +17,13 @@ public class Browser{
 		butt.setBounds(0,0,120,25);
 		jfxPanel.setBounds(0,25,1000,800);
 
+		//Display the history for the current browsing session
+		butt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev){
+				new HistoryPanel(history);
+			}
+		});
+
 		jFrame.add(jfxPanel);
 		jFrame.add(butt);
 		jFrame.setLayout(null);
@@ -30,9 +37,7 @@ public class Browser{
 				@Override
 				public void changed(ObservableValue ov, State oldState, State newState) {
 					if (newState == Worker.State.SUCCEEDED) {
-						System.out.println(webView.getEngine().getLocation());
-						history.addItem(webView.getEngine().getLocation());
-						System.out.println(history.getItems());
+						history.addItem(webView.getEngine().getTitle()+" - "+webView.getEngine().getLocation());
 					}
 
 				}
