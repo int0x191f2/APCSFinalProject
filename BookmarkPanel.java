@@ -8,12 +8,12 @@ import java.awt.event.*;
 import javafx.concurrent.Worker.State;
 import javafx.beans.value.*;
 import javafx.concurrent.*;
-public class HistoryPanel extends Panel{
+public class BookmarkPanel extends Panel{
     JList list;
     JScrollPane scrollPane;
-    public HistoryPanel(History history){
-        super("History");
-        list=new JList(history.getItems().toArray());
+    public BookmarkPanel(Bookmark bookmark){
+        super("Bookmarks");
+        list=new JList(bookmark.getItems().toArray());
         scrollPane=new JScrollPane(list);
         getFrame().add(scrollPane);
         displayPanel();
