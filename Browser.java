@@ -67,5 +67,4 @@ public class Browser{
 
 		jFrame.setVisible(true);
 	}
-
 }

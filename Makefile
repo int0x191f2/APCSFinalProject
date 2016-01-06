@@ -10,4 +10,7 @@ all:
 	javac Browser.java
 
 clean :
-	rm *.class
+	rm *.class *.html package-list script.js stylesheet.css
+
+javadoc :
+	javadoc History.java && firefox index.html
