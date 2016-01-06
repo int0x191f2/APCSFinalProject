@@ -21,4 +21,15 @@ public class History{
     public ArrayList<String> getItems(){
         return items;
     }
+	/**
+	 * Gets amount of history items
+	 * @return int count of history items
+	 */
+	public int getItemCount(){
+		int count=0;
+		for(int i=0;i<items.size();i++){
+			count++;
+		}
+		return count;
+	}
 }
