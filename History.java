@@ -9,14 +9,14 @@ public class History{
     }
 	/**
 	 * Adds items to the history
-	 * @param String item to add to history
+	 * @param item to add to history
 	 */
     public void addItem(String item){
 		items.add(item);
     }
 	/**
 	 * Gets an arraylist of all history items
-	 * @return ArrayList<String> arraylist of history values
+	 * @return arraylist of history values
 	 */
     public ArrayList<String> getItems(){
         return items;
